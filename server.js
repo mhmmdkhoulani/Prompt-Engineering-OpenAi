@@ -18,9 +18,13 @@ app.get("/", (req, res) => {
 app.get("/api/chat", async (req, res) => {
   try {
     const completion = await textToJson();
-
+    const response = completion
+      .replace(/```json\n/, "")
+      .replace(/\n```/, "")
+      .replace(/\n/g, "")
+      .replace(/\\"/g, '"');
     res.json({
-      response: completion,
+      response: response,
     });
   } catch (error) {
     console.error(error);

@@ -1,149 +1,378 @@
-const TalentProfileJson = {
-  indexes: { primary: { hash: "pk", sort: "sk" } },
-  models: {
-    TalentProfile: {
-      pk: { value: "talentProfile" },
-      sk: { value: "talentProfile#Mohammad_Kholani" },
-      firstName: "Mohammad",
-      secondNameInitials: "K",
-      userName: "mhmmdkholani@gmail.com",
-      photo: "",
-      level: "Professional",
-      seniority: "Experienced",
-      specialization: "Full Stack Development",
-      scoresheetLink: "",
-      yearsExperience: 3,
-      domainExperience: ["Web Development", "Mobile App Development"],
-      keyStrengths: [
-        "Full Stack Development",
-        "Responsive Interfaces",
-        "Database Management",
-      ],
-      uniqueness: "",
-      summary:
-        "Versatile software engineer with over three years of experience in full-stack development and API integration. Dedicated to continuous learning and contributing to innovative tech projects.",
-      bases: { cityState: "Beqa", country: "Lebanon" },
-      languages: [
-        { name: "Arabic", proficiencyLevel: "Native/Bilingual" },
-        { name: "English", proficiencyLevel: "Highly Proficient" },
-      ],
-      technicalSkills: [
-        {
-          sectionName: "Front-End Development",
-          skills: ["HTML", "CSS", "JavaScript"],
-        },
-        { sectionName: "Web Development", skills: ["ASP.Net"] },
-      ],
-      experiences: [
-        {
-          companyName: "Freelancer",
-          companyDomain: "Tech",
-          companyIndustry: "IT",
-          companyBusinessActivity: "Web Development",
-          candidatesUniqueAchievement: "",
-          summary:
-            "Freelance projects showcasing expertise in full-stack development. Developed mobile apps and optimized database schemas.",
-          positions: [
-            {
-              title: "Full Stack Developer",
-              startDate: "Nov 2017",
-              endDate: "Present",
-              note: "",
-              employmentType: "Freelance",
-            },
-          ],
-          location: { cityState: "Beqa", country: "Lebanon" },
-          responsibilitiesAndAccomplishments: [
-            "Developed Flutter-based mobile apps",
-            "Managed code with Git",
-            "Rigorous testing for robust functionality",
-          ],
-          toolsAndTechnologies: ["Microsoft SQL Server"],
-          projects: [
-            {
-              projectName: "Top-up Cards",
-              link: "http://topupcards.co",
-              description:
-                "Mobile application and website for buying and selling top-up, gift, and gaming cards.",
-              responsibilities: [],
-              technologies: [
-                "ASP.NET Core",
-                "Web API",
-                "SQL Server",
-                "Flutter",
-                "Angular",
-                "Dart",
-              ],
-            },
-          ],
-        },
-        {
-          companyName: "Kuzluk Creative Agency",
-          companyDomain: "Tech",
-          companyIndustry: "Marketing",
-          companyBusinessActivity: "Web Development",
-          candidatesUniqueAchievement: "",
-          summary:
-            "Engaged as a full-stack web developer at a digital marketing firm. Engineered and coded websites for clients in the Gulf region.",
-          positions: [
-            {
-              title: "Full Stack Web Developer",
-              startDate: "Mar 2018",
-              endDate: "May 2019",
-              note: "",
-              employmentType: "Remote",
-            },
-          ],
-          location: { cityState: "Istanbul", country: "Turkey" },
-          responsibilitiesAndAccomplishments: [
-            "Installed security protocols",
-            "Produced premium commercial websites",
-          ],
-          toolsAndTechnologies: [],
-          projects: [],
-        },
-        {
-          companyName: "Multi Aid Programs",
-          companyDomain: "NGO",
-          companyIndustry: "Nonprofit",
-          companyBusinessActivity: "Web Development",
-          candidatesUniqueAchievement: "",
-          summary:
-            "Engaged as a web development trainer for a Syrian-led NGO offering health, relief, and education to refugees. Led front-end development training sessions.",
-          positions: [
-            {
-              title: "Web Development Trainer",
-              startDate: "Jul 2018",
-              endDate: "Mar 2019",
-              note: "",
-              employmentType: "Part-Time",
-            },
-          ],
-          location: { cityState: "Beqa", country: "Lebanon" },
-          responsibilitiesAndAccomplishments: [
-            "Led training sessions",
-            "Provided hands-on guidance",
-          ],
-          toolsAndTechnologies: [],
-          projects: [],
-        },
-      ],
-      educations: [
-        {
-          startDate: "Aug 2019",
-          endDate: "May 2022",
-          institutionName: "Lebanese International University",
-          location: { cityState: "Lebanon", country: "" },
-          level: "Bachelor Degree",
-          major: "Computer Science",
-          scoreGPA: "",
-        },
-      ],
-      additionalProjects: [],
-      volunteering: [],
-      awardsCertificates: [],
-      recommendations: [],
-      courses: [],
-    },
+const jsonOutput = {
+  pk: { S: "talentProfile" },
+  sk: { S: "talentProfile#MohammadK" },
+  firstName: { S: "Mohammad" },
+  secondNameInitials: { S: "K" },
+  userName: { S: "MohammadK" },
+  photo: { S: "" },
+  level: { S: "" },
+  seniority: { S: "" },
+  specialization: { S: "" },
+  scoresheetLink: { S: "" },
+  yearsExperience: { N: "3" },
+  domainExperience: {
+    L: [
+      { S: "Web Development" },
+      { S: "Mobile Development" },
+      { S: "API Development" },
+    ],
   },
+  keyStrengths: {
+    L: [
+      { S: "Full Stack Development" },
+      { S: "Team Collaboration" },
+      { S: "Attention to Detail" },
+    ],
+  },
+  uniqueness: {
+    S: "Dedicated to continuous learning, currently exploring modern cloud solution development.",
+  },
+  summary: {
+    S: "A versatile software engineer with a Bachelor's in Computer Science and over three years of industry experience. Proficient in developing responsive web applications, APIs, and business solutions, with a Secret Clearance. Dedicated to continuous learning, currently exploring modern cloud solution development. Passionate about supporting students' career growth and eager to contribute to innovative tech projects.",
+  },
+  bases: { M: { cityState: { S: "Beqa" }, country: { S: "Lebanon" } } },
+  languages: {
+    L: [
+      {
+        M: {
+          name: { S: "Arabic" },
+          proficiencyLevel: { S: "Native or bilingual proficiency" },
+        },
+      },
+      {
+        M: {
+          name: { S: "English" },
+          proficiencyLevel: { S: "Highly Proficient" },
+        },
+      },
+    ],
+  },
+  technicalSkills: {
+    L: [
+      {
+        M: {
+          sectionName: { S: "Programming Languages" },
+          skills: { L: [{ S: "C#" }] },
+        },
+      },
+      {
+        M: {
+          sectionName: { S: "Front-End Development" },
+          skills: { L: [{ S: "Angular" }, { S: "Flutter" }] },
+        },
+      },
+      {
+        M: {
+          sectionName: { S: "Web Development" },
+          skills: {
+            L: [
+              { S: "WordPress Development" },
+              { S: "ASP.NET" },
+              { S: "HTML" },
+              { S: "CSS" },
+            ],
+          },
+        },
+      },
+      {
+        M: {
+          sectionName: { S: "Project Management" },
+          skills: { L: [{ S: "Team Oversight" }, { S: "Project Management" }] },
+        },
+      },
+      {
+        M: {
+          sectionName: { S: "Quality Assurance" },
+          skills: { L: [{ S: "Software Testing" }] },
+        },
+      },
+      {
+        M: {
+          sectionName: { S: "Web Technologies" },
+          skills: { L: [{ S: "Website Optimization" }, { S: "SEO" }] },
+        },
+      },
+    ],
+  },
+  experiences: {
+    L: [
+      {
+        M: {
+          companyName: { S: "Freelancer" },
+          companyDomain: { S: "Web Development" },
+          companyIndustry: { S: "Freelance" },
+          companyBusinessActivity: { S: "Software Development" },
+          candidatesUniqueAchievement: { S: "" },
+          summary: { S: "" },
+          positions: {
+            L: [
+              {
+                M: {
+                  title: { S: "Full Stack Developer" },
+                  startDate: { S: "Nov 2017" },
+                  endDate: { S: "" },
+                  note: { S: "" },
+                  employmentType: { S: "Freelance" },
+                },
+              },
+            ],
+          },
+          location: {
+            M: { cityState: { S: "Beqaa" }, country: { S: "Lebanon" } },
+          },
+          responsibilitiesAndAccomplishments: {
+            L: [
+              {
+                S: "Developed Flutter-based mobile apps for iOS and Android, focusing on integration and consistency",
+              },
+              {
+                S: "Integrated data from diverse sources using ORM frameworks like Entity Framework, enhancing data flow",
+              },
+              {
+                S: "Designed and optimized database schemas with Microsoft SQL Server, improving data management",
+              },
+              {
+                S: "Managed code efficiently with Git, facilitating collaboration within teams",
+              },
+              {
+                S: "Implemented rigorous testing protocols for robust application functionality",
+              },
+              {
+                S: "Introduced cutting-edge tools to streamline development workflows",
+              },
+              {
+                S: "Created responsive web interfaces with HTML, CSS, and JavaScript, emphasizing user-centric design",
+              },
+              {
+                S: "Facilitated collaboration between design and backend teams for seamless integration",
+              },
+              {
+                S: "Conducted thorough cross-browser testing for peak performance and compatibility",
+              },
+              {
+                S: "Transformed design mock-ups into polished, accurate websites, emphasizing attention to detail",
+              },
+            ],
+          },
+          toolsAndTechnologies: {
+            L: [
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "ASP.Net" },
+            ],
+          },
+          projects: { L: [] },
+        },
+      },
+      {
+        M: {
+          companyName: { S: "Kuzluk Creative Agency" },
+          companyDomain: { S: "Marketing" },
+          companyIndustry: { S: "Digital Marketing" },
+          companyBusinessActivity: { S: "Software Development" },
+          candidatesUniqueAchievement: { S: "" },
+          summary: { S: "" },
+          positions: {
+            L: [
+              {
+                M: {
+                  title: { S: "Full Stack Web Developer" },
+                  startDate: { S: "Mar 2018" },
+                  endDate: { S: "May 2019" },
+                  note: { S: "Remote Work" },
+                  employmentType: { S: "Remote" },
+                },
+              },
+            ],
+          },
+          location: {
+            M: { cityState: { S: "Istanbul" }, country: { S: "Turkey" } },
+          },
+          responsibilitiesAndAccomplishments: {
+            L: [
+              {
+                S: "Engineered, coded, and upheld websites catering to a wide array of clientele",
+              },
+              {
+                S: "Installed robust security protocols such as firewalls and encryption, fortifying website defenses and shielding user data",
+              },
+              {
+                S: "Produced premium commercial websites that met stringent coding criteria, prioritizing seamless performance across multiple browsers",
+              },
+            ],
+          },
+          toolsAndTechnologies: {
+            L: [
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "Security Implementation" },
+              { S: "Website Optimization" },
+            ],
+          },
+          projects: { L: [] },
+        },
+      },
+      {
+        M: {
+          companyName: { S: "Multi Aid Programs" },
+          companyDomain: { S: "NGO" },
+          companyIndustry: { S: "Non-Profit" },
+          companyBusinessActivity: { S: "Education, Health, Relief" },
+          candidatesUniqueAchievement: { S: "" },
+          summary: { S: "" },
+          positions: {
+            L: [
+              {
+                M: {
+                  title: { S: "Web Development Trainer" },
+                  startDate: { S: "Jul 2018" },
+                  endDate: { S: "Mar 2019" },
+                  note: { S: "" },
+                  employmentType: { S: "Onsite" },
+                },
+              },
+            ],
+          },
+          location: {
+            M: { cityState: { S: "Beqa" }, country: { S: "Lebanon" } },
+          },
+          responsibilitiesAndAccomplishments: {
+            L: [
+              {
+                S: "Led front-end development training sessions for refugees, empowering them with valuable technical skills",
+              },
+              {
+                S: "Provided hands-on guidance in technology applications, fostering an environment conducive to learning and skill development",
+              },
+              {
+                S: "Inspired students to embrace learning, cultivating self-assurance and a proactive approach to education",
+              },
+              {
+                S: "Designed personalized assessment materials to gauge and enhance student comprehension",
+              },
+              {
+                S: "Offered tailored study techniques and exam tactics to bolster academic advancement",
+              },
+              {
+                S: "Advocated for self-motivation and resilience as pivotal factors in the learning process",
+              },
+              {
+                S: "Contributed to the development and upkeep of the MAPs website, ensuring its effectiveness and relevance",
+              },
+            ],
+          },
+          toolsAndTechnologies: {
+            L: [
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "Front-End Development" },
+            ],
+          },
+          projects: { L: [] },
+        },
+      },
+    ],
+  },
+  educations: {
+    L: [
+      {
+        M: {
+          institutionName: { S: "Lebanese International University" },
+          location: { M: { cityState: { S: "" }, country: { S: "Lebanon" } } },
+          level: { S: "Bachelor Degree" },
+          major: { S: "Computer Science" },
+          scoreGPA: { S: "" },
+          startDate: { S: "Aug 2019" },
+          endDate: { S: "May 2022" },
+        },
+      },
+    ],
+  },
+  additionalProjects: {
+    L: [
+      {
+        M: {
+          projectName: {
+            S: "Top-up Cards - Mobile Application and Website Development",
+          },
+          link: { S: "http://topupcards.co" },
+          description: {
+            S: "Developed a mobile application and corresponding website for the buying and selling of top-up, gift, gaming, and entertainment cards. The app is available on both iOS and Android platforms.",
+          },
+          responsibilities: { L: [] },
+          technologies: {
+            L: [
+              { S: "ASP.NET Core" },
+              { S: "Web API" },
+              { S: "SQL Server" },
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "Angular" },
+              { S: "Flutter" },
+              { S: "Dart" },
+            ],
+          },
+        },
+      },
+      {
+        M: {
+          projectName: {
+            S: "Light Peace Initiative Corp - Website Development",
+          },
+          link: { S: "https://lpicorp.org/" },
+          description: { S: "" },
+          responsibilities: { L: [] },
+          technologies: {
+            L: [
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "WordPress" },
+            ],
+          },
+        },
+      },
+      {
+        M: {
+          projectName: { S: "Peanut Butter Collection - Website Development" },
+          link: { S: "https://www.peanutbuttercollection.com/" },
+          description: { S: "" },
+          responsibilities: { L: [] },
+          technologies: {
+            L: [
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "WordPress" },
+              { S: "Shopify" },
+            ],
+          },
+        },
+      },
+      {
+        M: {
+          projectName: { S: "Multi Aid Programs - Website Development" },
+          link: { S: "http://multiaidprograms.org/" },
+          description: { S: "" },
+          responsibilities: { L: [] },
+          technologies: {
+            L: [
+              { S: "HTML" },
+              { S: "CSS" },
+              { S: "JavaScript" },
+              { S: "WordPress" },
+            ],
+          },
+        },
+      },
+    ],
+  },
+  volunteering: { L: [] },
+  awardsCertificates: { L: [] },
+  recommendations: { L: [] },
+  courses: { L: [] },
 };
