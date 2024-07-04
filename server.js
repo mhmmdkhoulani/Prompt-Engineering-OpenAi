@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const { textToJson } = require("./prompts/textToJson");
+const { cvAsTextToJson } = require("./prompts/cvAsText");
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -14,10 +14,10 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
-// Example of a POST route to interact with OpenAI API
+// Example of a Get route to interact with OpenAI API
 app.get("/api/chat", async (req, res) => {
   try {
-    const completion = await textToJson();
+    const completion = await cvAsTextToJson();
     const response = completion
       .replace(/```json\n/, "")
       .replace(/\n```/, "")

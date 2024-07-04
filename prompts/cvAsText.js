@@ -1869,17 +1869,34 @@ const example2 = `{
     "N": "6"
   }
 }`;
-const prompt = `You are a database expert and you have an assignment to fill out this information ${cvText} into a json object to be added to dynamodb database which has this schema ${dbSchema} convert all the 
-Here are some examples of result of the json object: Example 1: ${example1} Example 2: ${example2}
-Keep the names of properties as it is because it will effect the work of the app
-If there are any additional properties don't add them and if there are any missing properties add them as emtpy string or object or whatever appear in the schema
-in the response add just the object with out any explenations and ignore all the empty spaces and new line characters like 
-Extract all the data from cv and fill related properties but if it is not present don't add them like you can extract the uniqness and seniority or similar fileds but you can't extract the courses and volantures `;
-const textToJson = async () => {
+const prompt = `You are a database expert. Your task is to transform the provided CV text ${cvText} into a JSON object to be added to a DynamoDB database with the following schema: ${dbSchema}.
+
+Instructions:
+Property Names:
+Maintain exact property names as specified in the schema. Any deviation will cause the application to malfunction.
+Additional Properties:
+
+Do not include any properties that are not defined in the schema. Extra properties will disrupt the database and application functionality.
+
+Missing Properties:
+For any properties defined in the schema but not present in the CV, add them as empty strings, objects, or whatever the schema specifies. This ensures the database remains consistent and the application runs smoothly.
+
+Data Extraction:
+Extract all relevant data from the CV for the defined properties in the schema.
+If specific information such as uniqueness and seniority is present, include it.
+If information like courses or volunteer activities is absent, do not include those properties.
+
+Examples:
+Example 1: ${example1}
+Example 2: ${example2}
+Output Requirements:
+Provide only the JSON object in your response.
+Do not include any explanations, empty spaces, or new line characters.`;
+const cvAsTextToJson = async () => {
   const chatCompletion = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [{ role: "user", content: prompt }],
   });
   return chatCompletion.choices[0].message.content;
 };
-module.exports = { textToJson };
+module.exports = { cvAsTextToJson };
