@@ -1897,6 +1897,8 @@ const cvAsTextToJson = async () => {
     model: "gpt-4o",
     messages: [{ role: "user", content: prompt }],
   });
-  return chatCompletion.choices[0].message.content;
+  const result = chatCompletion.choices[0].message.content;
+  console.log(result);
+  return result;
 };
 module.exports = { cvAsTextToJson };
